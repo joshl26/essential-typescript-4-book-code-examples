@@ -16,3 +16,4 @@ let todoItem = collection.getToDoById(newId);
 // console.log(JSON.stringify(todoItem));
 todoItem.printDetails();
 //collection.addTodo(todoItem);
+collection.getToDoItems(true).forEach((item) => item.printDetails());

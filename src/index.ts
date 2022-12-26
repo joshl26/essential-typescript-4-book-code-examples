@@ -19,3 +19,5 @@ let todoItem: TodoItem = collection.getToDoById(newId);
 todoItem.printDetails();
 
 //collection.addTodo(todoItem);
+
+collection.getToDoItems(true).forEach((item) => item.printDetails());
