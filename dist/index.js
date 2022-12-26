@@ -10,10 +10,12 @@ let todos = [
 ];
 let collection = new todoCollection_1.TodoCollection("Adam", todos);
 console.clear();
-console.log(`${collection.userName}'s Todo List`);
-let newId = collection.addTodo("Go for run");
-let todoItem = collection.getToDoById(newId);
+console.log(`${collection.userName}'s Todo List` +
+    `(${collection.getItemCounts().incomplete} items to do)`);
+// let newId: number = collection.addTodo("Go for run");
+// let todoItem: TodoItem = collection.getToDoById(newId);
 // console.log(JSON.stringify(todoItem));
-todoItem.printDetails();
+// todoItem.printDetails();
 //collection.addTodo(todoItem);
+// collection.removeComplete();
 collection.getToDoItems(true).forEach((item) => item.printDetails());
