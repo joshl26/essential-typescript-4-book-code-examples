@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
-        "target": "es2018",
+        "target": "es2020",
         "outDir": "./dist",
         "rootDir": "./src",
-        "noEmitOnError": true,
-        //"lib": ["es5", "dom", "es2015.collection"]   
-        "module": "CommonJS",
-        "sourceMap": true,    
+        "declaration": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true         
     }
 }
