@@ -1,10 +1,9 @@
 {
-  "compilerOptions": {
-    "jsxFactory": "createElement",
-    "jsx": "react",
-    "target": "es2020",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "moduleResolution": "node"
-  }
+    "compilerOptions": {
+        "target": "es2020",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "jsx": "react",
+        "jsxFactory": "createElement"
+    }
 }
