@@ -10,6 +10,13 @@ let umbrella = {
     price: 30,
     hasFeature: (feature) => feature === Feature.Waterproof,
 };
-let products = [hat, gloves, umbrella];
+let mirrorShades = { name: "Sunglasses", price: 54, finish: "mirrored" };
+let darkShades = { name: "Sunglasses", price: 54, finish: "flat" };
+let products = [hat, gloves, umbrella, mirrorShades, darkShades];
+// let products: {
+//     name: string;
+//     price?: number;
+//     hasFeature?(Feature): boolean;
+//   }[] = [hat, gloves, umbrella];
 products.forEach((prod) => console.log(`${prod.name}: ${prod.price}, ` +
     `Waterproof: ${prod.hasFeature ? prod.hasFeature(Feature.Waterproof) : false}`));

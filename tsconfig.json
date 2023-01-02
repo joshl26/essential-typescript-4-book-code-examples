@@ -4,6 +4,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "declaration": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "suppressExcessPropertyErrors": true
   }
 }
