@@ -1,7 +1,11 @@
 declare function calculateTax(amount: number): number;
 declare function writePrice(product: string, price: number): void;
-declare let prices: number[];
+declare let prices: any[];
 declare let names: string[];
 declare let hatPrice: number;
 declare let glovesPrice: number;
 declare let umbrellaPrice: number;
+declare let hat: [string, number];
+declare let gloves: [string, number];
+declare let products: [string, number][];
+declare let tupleUnion: ([string, number] | boolean)[];
