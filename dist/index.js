@@ -6,6 +6,9 @@ function writePrice(product, price) {
 }
 let prices = [100, 75, 42];
 let names = ["Hat", "Gloves", "Umbrella"];
+prices.forEach((price, index) => {
+    writePrice(names[index], calculateTax(price));
+});
 let hatPrice = 100;
 let glovesPrice = 75;
 let umbrellaPrice = 42;
