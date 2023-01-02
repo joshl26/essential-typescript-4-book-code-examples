@@ -3,8 +3,6 @@
     "target": "es2020",
     "outDir": "./dist",
     "rootDir": "./src",
-    "declaration": true,
-    "strictNullChecks": true,
-    "suppressExcessPropertyErrors": true
+    "moduleResolution": "node"
   }
 }
