@@ -21,7 +21,14 @@ writePrice(names[1], calculateTax(prices[1]));
 writePrice(names[2], calculateTax(prices[2]));
 //Tuples
 let hat = ["Hat", 100];
-let gloves = ["Gloves", 75];
+let gloves = ["Gloves", 75, 10];
+[hat, gloves].forEach((tuple) => {
+    let [name, price, taxRate] = tuple;
+    if (taxRate != undefined) {
+        price += price * (taxRate / 100);
+    }
+    writePrice(name, price);
+});
 hat.forEach((h) => {
     if (typeof h === "string") {
         console.log(`String: ${h}`);
@@ -50,5 +57,53 @@ tupleUnion.forEach((elem) => {
     }
     else if (typeof elem === "boolean") {
         console.log(`Boolean value ${elem}`);
+    }
+});
+var OtherEnum;
+(function (OtherEnum) {
+    OtherEnum[OtherEnum["First"] = 10] = "First";
+    OtherEnum[OtherEnum["Two"] = 20] = "Two";
+})(OtherEnum || (OtherEnum = {}));
+var Product;
+(function (Product) {
+    Product[Product["Hat"] = 11] = "Hat";
+    Product[Product["Gloves"] = 20] = "Gloves";
+    Product[Product["Umbrella"] = 31] = "Umbrella";
+})(Product || (Product = {}));
+let productValue = Product.Hat;
+if (typeof productValue === "number") {
+    console.log("Value is a number");
+}
+let unionValue = Product.Hat;
+if (typeof unionValue === "number") {
+    console.log("Value is a number");
+}
+let productName = Product[productValue];
+console.log(`Value: ${productValue}, Name: ${productName}`);
+var City;
+(function (City) {
+    City["London"] = "London";
+    City["Paris"] = "Paris";
+    City["NY"] = "New York";
+})(City || (City = {}));
+console.log(`City: ${City.London}`);
+[(Product.Hat, Product.Gloves, Product.Umbrella)].forEach((val) => {
+    console.log(`Number value ${val}`);
+});
+let products1 = [
+    [Product.Hat, 100],
+    [Product.Gloves, 75],
+];
+products1.forEach((prod) => {
+    switch (prod[0]) {
+        case Product.Hat:
+            writePrice("Hat", calculateTax(prod[1]));
+            break;
+        case Product.Gloves:
+            writePrice("Gloves", calculateTax(prod[1]));
+            break;
+        case Product.Umbrella:
+            writePrice("Umbrella", calculateTax(prod[1]));
+            break;
     }
 });
