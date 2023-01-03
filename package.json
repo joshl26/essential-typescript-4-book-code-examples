@@ -10,6 +10,7 @@
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
+    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -17,7 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "json": "json-server data.js -p 4600",
+    "serve": "react-scripts start",
+    "start": "npm-run-all -p serve json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
