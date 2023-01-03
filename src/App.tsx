@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+//import { Product, Order } from './data/entities';
+//import { ProductList } from './productList';
+import { dataStore } from "./data/dataStore";
+import { Provider } from 'react-redux';
+import { HttpHandler } from "./data/httpHandler";
+import { addProduct } from './data/actionCreators';
+import { ConnectedProductList } from './data/productListConnector';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {
+    // no props required
 }
 
-export default App;
+export default class App extends Component<Props> {
+    private httpHandler = new HttpHandler();
+
+    // constructor(props: Props) {
+    //     super(props);
+    //     this.state = {
+    //         order: new Order()
+    //     }
+    // }
+
+    componentDidMount = () => this.httpHandler
+        .loadProducts(data => {dataStore.dispatch(addProduct(...data))});
+
+    render = () => 
+        <div className="App">
+            <Provider store={ dataStore }>
+                <ConnectedProductList />
+            </Provider>
+        </div>
+
+    submitCallback = () => {
+        console.log("Submit order");
+    }
+}
